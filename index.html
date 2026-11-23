@@ -1,20 +1,27 @@
+
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CorvInc Solutions | Inteligencia Artificial y Orden para Colegios</title>
-  <meta name="description" content="Ahorro de tiempo y orden en la gestión escolar con Convivenc-IA y Pedagog-IA. Asistentes de Inteligencia Artificial entrenados con los documentos reales de tu establecimiento." />
-  
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Google Fonts -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070b17">
+
+  <title>CorvInc Solutions | Inteligencia Artificial para Colegios</title>
+  <meta name="description" content="Convivenc-IA y Pedagog-IA: asistentes de inteligencia artificial personalizados para apoyar la convivencia escolar y la gestión pedagógica en Chile. Solicita una demostración gratuita.">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CorvInc Solutions | IA para Educación">
+  <meta property="og:description" content="Menos tiempo en tareas administrativas. Más tiempo para educar. Descubre Convivenc-IA y Pedagog-IA.">
+  <meta property="og:image" content="82879.png">
+  <meta property="og:locale" content="es_CL">
+
+  <link rel="icon" href="82879.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Lucide Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <script>
@@ -22,489 +29,1262 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            display: ['"Outfit"', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            display: ['Outfit', 'sans-serif']
           },
           colors: {
             brand: {
-              dark: '#060913',
-              card: '#0d1324',
-              cyan: '#00f0ff',
-              blue: '#3b82f6',
-              purple: '#8b5cf6',
-              gold: '#f5b942',
-              whatsapp: '#25D366'
-            }
-          },
-          animation: {
-            'pulse-slow': 'pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            'float': 'float 5s ease-in-out infinite',
-          },
-          keyframes: {
-            float: {
-              '0%, 100%': { transform: 'translateY(0px)' },
-              '50%': { transform: 'translateY(-10px)' },
+              dark: '#070b17',
+              card: '#101a2e',
+              cyan: '#00e5ef',
+              blue: '#427dff',
+              purple: '#9461ff',
+              gold: '#f6bf56',
+              green: '#25d366'
             }
           }
         }
       }
-    }
+    };
   </script>
 
   <style>
+    :root {
+      color-scheme: dark;
+    }
+
+    html {
+      scroll-padding-top: 90px;
+    }
+
     body {
-      background-color: #060913;
+      margin: 0;
+      background: #070b17;
       color: #f8fafc;
       overflow-x: hidden;
     }
 
-    /* Fondo tipo grilla tecnológica */
-    .tech-grid {
-      background-size: 40px 40px;
-      background-image: 
-        linear-gradient(to right, rgba(0, 240, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
+    .tech-bg {
+      background-image:
+        radial-gradient(ellipse at 15% 10%, rgba(0,229,239,.13), transparent 36%),
+        radial-gradient(ellipse at 90% 25%, rgba(148,97,255,.13), transparent 36%),
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: auto, auto, 44px 44px, 44px 44px;
     }
 
-    /* Gradientes llamativos */
-    .text-gradient-ai {
-      background: linear-gradient(135deg, #00f0ff 0%, #3b82f6 50%, #a855f7 100%);
+    .gradient-text {
+      background: linear-gradient(110deg,#48f3fa,#6694ff,#b08aff);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
     }
 
-    .text-gradient-gold {
-      background: linear-gradient(135deg, #fde047 0%, #f59e0b 100%);
+    .gold-text {
+      background: linear-gradient(110deg,#ffe29a,#f5ad39);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
     }
 
-    /* Tarjetas con brillo glassmorphism */
-    .glass-card {
-      background: rgba(13, 19, 36, 0.78);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    .glass {
+      background: rgba(17,26,47,.82);
+      border: 1px solid rgba(255,255,255,.1);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
     }
 
-    .glass-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(0, 240, 255, 0.45);
-      box-shadow: 0 20px 40px -15px rgba(0, 240, 255, 0.2);
+    .card-hover {
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
     }
 
-    .glass-card-featured {
-      background: linear-gradient(180deg, rgba(17, 25, 48, 0.92) 0%, rgba(10, 15, 30, 0.95) 100%);
-      border: 1px solid rgba(245, 185, 66, 0.45);
-      box-shadow: 0 0 35px -10px rgba(245, 185, 66, 0.25);
+    .card-hover:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0,229,239,.45);
+      box-shadow: 0 20px 45px rgba(0,229,239,.09);
     }
 
-    .glass-card-featured:hover {
-      border-color: #f5b942;
-      box-shadow: 0 25px 50px -12px rgba(245, 185, 66, 0.35);
+    .btn-primary {
+      background: linear-gradient(110deg,#00bcd4,#4179ed,#8654e9);
+      transition: filter .2s ease, transform .2s ease;
     }
 
-    /* Botón WhatsApp vibrante */
-    .btn-ws {
-      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-      box-shadow: 0 8px 25px -5px rgba(37, 211, 102, 0.45);
-      transition: all 0.25s ease;
+    .btn-primary:hover {
+      filter: brightness(1.13);
+      transform: translateY(-2px);
     }
 
-    .btn-ws:hover {
-      transform: scale(1.02);
-      box-shadow: 0 12px 30px -4px rgba(37, 211, 102, 0.65);
-      filter: brightness(1.08);
+    .btn-whatsapp {
+      background: linear-gradient(110deg,#25d366,#128c7e);
+      transition: filter .2s ease, transform .2s ease;
+    }
+
+    .btn-whatsapp:hover {
+      filter: brightness(1.1);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.23);
+      background: rgba(255,255,255,.045);
+      transition: background .2s ease, border-color .2s ease;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,.1);
+      border-color: #00e5ef;
+    }
+
+    .featured {
+      border: 1px solid rgba(246,191,86,.65);
+      background: linear-gradient(170deg,#22243c,#0c1324);
+      box-shadow: 0 0 45px rgba(246,191,86,.1);
+    }
+
+    .section-tag {
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #4ce7f0;
+    }
+
+    .check {
+      color: #35e2e9;
+      flex-shrink: 0;
+      margin-top: 2px;
+      width: 19px;
+      height: 19px;
+    }
+
+    details summary {
+      cursor: pointer;
+      list-style: none;
+    }
+
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details[open] .faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    .faq-chevron {
+      transition: transform .2s ease;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    summary:focus-visible {
+      outline: 2px solid #00e5ef;
+      outline-offset: 4px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,*::before,*::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
     }
   </style>
 </head>
-<body class="tech-grid antialiased selection:bg-cyan-500 selection:text-slate-950">
 
-  <!-- Luces ambientales de fondo -->
-  <div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-    <div class="absolute -top-40 -left-40 w-96 h-96 bg-cyan-500/20 rounded-full blur-[130px] animate-pulse-slow"></div>
-    <div class="absolute top-1/3 -right-40 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[150px] animate-pulse-slow"></div>
-    <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-[130px]"></div>
-  </div>
+<body class="tech-bg antialiased">
 
-  <!-- NAVBAR -->
-  <header class="sticky top-0 z-50 border-b border-white/10 bg-[#060913]/85 backdrop-blur-xl">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3 group">
-        <img src="82879.png" alt="CorvInc Solutions Logo" onerror="this.style.display='none'" class="w-11 h-11 rounded-xl object-cover border border-amber-400/40 shadow-lg shadow-cyan-500/10">
-        <div>
-          <span class="font-display font-extrabold text-xl tracking-tight text-white">Corv<span class="text-gradient-gold">INC</span></span>
-          <span class="block text-[11px] uppercase tracking-[0.22em] text-cyan-400 font-semibold -mt-1">Solutions</span>
+  <!-- NAVEGACIÓN -->
+  <header class="sticky top-0 z-50 bg-[#070b17]/95 backdrop-blur-xl border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-5 lg:px-8 h-20 flex justify-between items-center gap-4">
+
+      <a href="#inicio" class="flex items-center gap-3 shrink-0" aria-label="CorvInc Solutions, inicio">
+        <img src="82879.png"
+             alt="Logo CorvInc Solutions"
+             class="w-11 h-11 rounded-xl object-cover border border-amber-400/40"
+             onerror="this.style.display='none'">
+
+        <div class="leading-tight">
+          <div class="font-display font-extrabold text-xl">
+            Corv<span class="gold-text">INC</span>
+          </div>
+          <div class="text-cyan-400 text-[10px] font-bold tracking-[.25em] uppercase">
+            Solutions
+          </div>
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-        <a href="#nosotros" class="hover:text-cyan-400 transition">Quiénes Somos</a>
-        <a href="#mision-vision" class="hover:text-cyan-400 transition">Misión y Visión</a>
-        <a href="#que-ofrecemos" class="hover:text-cyan-400 transition">Qué ofrecemos?</a>
-        <a href="#servicios" class="hover:text-cyan-400 transition">Packs</a>
+      <nav class="hidden lg:flex items-center gap-7 text-sm text-slate-300 font-semibold" aria-label="Navegación principal">
+        <a href="#soluciones" class="hover:text-cyan-400">Soluciones</a>
+        <a href="#video" class="hover:text-cyan-400">Demostración</a>
+        <a href="#beneficios" class="hover:text-cyan-400">Beneficios</a>
+        <a href="#implementacion" class="hover:text-cyan-400">Cómo funciona</a>
+        <a href="#planes" class="hover:text-cyan-400">Servicios</a>
+        <a href="#nosotros" class="hover:text-cyan-400">Nosotros</a>
       </nav>
 
-      <a href="https://wa.me/56978488772?text=Hola%20CorvInc%20Solutions,%20me%20interesa%20conocer%20sus%20soluciones%20de%20IA%20para%20nuestro%20establecimiento." target="_blank" rel="noopener" class="btn-ws text-white font-bold text-sm px-5 py-2.5 rounded-full flex items-center gap-2">
+      <a href="#cotizar"
+         class="hidden sm:inline-flex btn-whatsapp rounded-full px-5 py-3 text-sm font-bold items-center gap-2">
         <i data-lucide="message-circle" class="w-4 h-4"></i>
-        <span>WhatsApp Directo</span>
+        Cotizar
       </a>
+
+      <button id="menuButton"
+              type="button"
+              aria-label="Abrir menú"
+              aria-controls="mobileMenu"
+              aria-expanded="false"
+              class="lg:hidden p-2 border border-white/15 rounded-lg">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
     </div>
+
+    <nav id="mobileMenu"
+         aria-label="Navegación móvil"
+         class="hidden lg:hidden px-5 pb-5 bg-[#070b17] border-t border-white/10">
+      <div class="flex flex-col gap-4 pt-5 text-sm font-semibold text-slate-200">
+        <a href="#soluciones">Soluciones</a>
+        <a href="#video">Demostración</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#implementacion">Cómo funciona</a>
+        <a href="#planes">Servicios</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#cotizar" class="text-green-400">Cotizar por WhatsApp</a>
+      </div>
+    </nav>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="relative pt-16 pb-24 lg:pt-24 lg:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-    <div class="grid lg:grid-cols-12 gap-12 items-center">
-      
-      <!-- Columna Texto -->
-      <div class="lg:col-span-7 text-center lg:text-left">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/30 text-cyan-300 text-xs font-bold uppercase tracking-wider mb-6">
-          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
-          Tecnología Educativa e Inteligencia Artificial Aplicada
+  <main>
+
+    <!-- HERO -->
+    <section id="inicio" class="max-w-7xl mx-auto px-5 lg:px-8 pt-20 lg:pt-28 pb-24">
+      <div class="grid lg:grid-cols-12 gap-14 items-center">
+
+        <div class="lg:col-span-7 text-center lg:text-left">
+
+          <span class="inline-flex items-center gap-2 border border-cyan-400/30 bg-cyan-400/10 text-cyan-300 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider mb-7">
+            <i data-lucide="sparkles" class="w-4 h-4"></i>
+            Tecnología educativa para Chile
+          </span>
+
+          <h1 class="font-display font-extrabold text-4xl sm:text-5xl xl:text-6xl leading-[1.12] tracking-tight mb-7">
+            Menos tiempo en tareas administrativas.
+            <span class="gradient-text block mt-2">
+              Más tiempo para educar.
+            </span>
+          </h1>
+
+          <p class="text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-5">
+            Transforma la gestión de tu establecimiento con asistentes de inteligencia artificial diseñados para apoyar a directivos, UTP, docentes y equipos de convivencia escolar.
+          </p>
+
+          <p class="text-slate-400 leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-9">
+            Convivenc-IA y Pedagog-IA pueden configurarse con documentación institucional y fuentes educativas pertinentes, facilitando consultas, elaboración de recursos y organización del trabajo.
+          </p>
+
+          <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+            <a href="#video"
+               class="btn-primary px-7 py-4 rounded-xl font-bold inline-flex justify-center items-center gap-2">
+              <i data-lucide="play-circle" class="w-5 h-5"></i>
+              Ver demostración
+            </a>
+
+            <a href="#cotizar"
+               class="btn-whatsapp px-7 py-4 rounded-xl font-bold inline-flex justify-center items-center gap-2">
+              <i data-lucide="message-circle" class="w-5 h-5"></i>
+              Solicitar cotización
+            </a>
+          </div>
+
+          <div class="grid sm:grid-cols-3 gap-4 border-t border-white/10 mt-12 pt-8 text-left">
+            <div class="flex gap-3">
+              <i data-lucide="school" class="w-6 h-6 text-cyan-400 shrink-0"></i>
+              <div>
+                <p class="font-bold text-white text-sm">Enfoque escolar</p>
+                <p class="text-xs text-slate-400 mt-1">Pensado para establecimientos chilenos</p>
+              </div>
+            </div>
+
+            <div class="flex gap-3">
+              <i data-lucide="file-check" class="w-6 h-6 text-purple-400 shrink-0"></i>
+              <div>
+                <p class="font-bold text-white text-sm">Personalizable</p>
+                <p class="text-xs text-slate-400 mt-1">Según documentación y necesidades institucionales</p>
+              </div>
+            </div>
+
+            <div class="flex gap-3">
+              <i data-lucide="users" class="w-6 h-6 text-amber-400 shrink-0"></i>
+              <div>
+                <p class="font-bold text-white text-sm">Acompañamiento</p>
+                <p class="text-xs text-slate-400 mt-1">Orientación para su implementación y uso</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-[1.1] tracking-tight text-white mb-6">
-          Más <span class="text-gradient-ai">tiempo y orden</span> para tu colegio con IA entrenada en tu propia realidad.
-        </h1>
+        <!-- TARJETA PRINCIPAL -->
+        <div class="lg:col-span-5">
+          <div class="relative max-w-md mx-auto">
 
-        <p class="text-lg sm:text-xl text-slate-300 leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
-          Transformamos los reglamentos, protocolos y lineamientos pedagógicos de tu establecimiento en asistentes inteligentes de consulta inmediata. Sin improvisaciones, sin pérdida de horas buscando documentos.
+            <div class="absolute -inset-1 rounded-3xl bg-gradient-to-br from-cyan-500 via-purple-500 to-amber-400 blur-xl opacity-25"></div>
+
+            <div class="relative glass rounded-3xl p-7 sm:p-9">
+              <div class="text-center mb-8">
+                <img src="82879.png"
+                     alt="Identidad gráfica de CorvInc Solutions"
+                     class="w-28 h-28 rounded-2xl mx-auto object-cover border border-amber-400/40 mb-5"
+                     onerror="this.style.display='none'">
+
+                <h2 class="font-display text-2xl font-extrabold">
+                  CorvInc Solutions
+                </h2>
+                <p class="text-cyan-400 text-sm mt-1">
+                  Innovación tecnológica para la educación
+                </p>
+              </div>
+
+              <div class="space-y-4">
+
+                <div class="rounded-2xl p-5 bg-cyan-400/5 border border-cyan-400/20 flex gap-4">
+                  <div class="shrink-0 p-3 bg-cyan-400/10 rounded-xl h-fit">
+                    <i data-lucide="shield-check" class="text-cyan-400 w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-white">Convivenc-IA</h3>
+                    <p class="text-sm text-slate-400 mt-1 leading-relaxed">
+                      Consulta de reglamentos, protocolos y orientaciones de convivencia escolar.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="rounded-2xl p-5 bg-purple-400/5 border border-purple-400/20 flex gap-4">
+                  <div class="shrink-0 p-3 bg-purple-400/10 rounded-xl h-fit">
+                    <i data-lucide="book-open-check" class="text-purple-400 w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-white">Pedagog-IA</h3>
+                    <p class="text-sm text-slate-400 mt-1 leading-relaxed">
+                      Apoyo pedagógico en base al currículum nacional y lineamientos institucionales.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="text-center pt-4">
+                  <span class="text-amber-300 text-xs font-semibold tracking-wide uppercase">
+                    La tecnología al servicio de las personas
+                  </span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMA Y SOLUCIÓN -->
+    <section class="py-20 border-t border-white/10 bg-[#0b1120]/70">
+      <div class="max-w-6xl mx-auto px-5">
+
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="section-tag">Una necesidad real</span>
+
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl mt-4 mb-5">
+            Tu equipo necesita tiempo para gestionar, enseñar y acompañar.
+          </h2>
+
+          <p class="text-slate-400 leading-relaxed">
+            Buscar protocolos, revisar documentación y preparar recursos son tareas necesarias, pero pueden consumir gran parte de la jornada escolar.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+          <div class="glass card-hover rounded-2xl p-7">
+            <i data-lucide="files" class="w-9 h-9 text-cyan-400 mb-5"></i>
+            <h3 class="font-display font-bold text-xl mb-3">
+              Información dispersa
+            </h3>
+            <p class="text-sm leading-relaxed text-slate-400">
+              Reglamentos, protocolos y lineamientos almacenados en distintos documentos y carpetas.
+            </p>
+          </div>
+
+          <div class="glass card-hover rounded-2xl p-7">
+            <i data-lucide="clock-3" class="w-9 h-9 text-purple-400 mb-5"></i>
+            <h3 class="font-display font-bold text-xl mb-3">
+              Tiempo administrativo
+            </h3>
+            <p class="text-sm leading-relaxed text-slate-400">
+              Equipos educativos que necesitan organizar información y producir recursos con eficiencia.
+            </p>
+          </div>
+
+          <div class="glass card-hover rounded-2xl p-7">
+            <i data-lucide="route" class="w-9 h-9 text-amber-400 mb-5"></i>
+            <h3 class="font-display font-bold text-xl mb-3">
+              Criterios institucionales
+            </h3>
+            <p class="text-sm leading-relaxed text-slate-400">
+              La importancia de trabajar con orientaciones coherentes con el proyecto educativo del establecimiento.
+            </p>
+          </div>
+        </div>
+
+        <p class="text-center text-cyan-300 font-semibold mt-10 text-lg">
+          CorvInc Solutions propone una forma más simple de acceder a información y apoyar la gestión escolar.
         </p>
+      </div>
+    </section>
 
-        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-          <a href="#que-ofrecemos" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-white font-bold text-base shadow-lg shadow-cyan-500/25 hover:brightness-110 transition flex items-center justify-center gap-2">
-            <span>Qué ofrecemos?</span>
-            <i data-lucide="arrow-down-circle" class="w-5 h-5"></i>
+    <!-- SOLUCIONES -->
+    <section id="soluciones" class="py-24 max-w-7xl mx-auto px-5 lg:px-8">
+
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="section-tag">Nuestras soluciones</span>
+
+        <h2 class="font-display font-extrabold text-3xl sm:text-5xl mt-4 mb-5">
+          Dos asistentes. Un mismo propósito.
+        </h2>
+
+        <p class="text-slate-400 text-lg">
+          Facilitar el trabajo cotidiano de los equipos educativos mediante herramientas prácticas, personalizables y orientadas a necesidades reales.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8">
+
+        <!-- CONVIVENC-IA -->
+        <article class="glass card-hover rounded-3xl p-8 sm:p-10">
+          <div class="w-16 h-16 rounded-2xl bg-cyan-400/15 flex justify-center items-center mb-7">
+            <i data-lucide="shield-check" class="w-9 h-9 text-cyan-400"></i>
+          </div>
+
+          <span class="text-cyan-400 text-xs font-bold uppercase tracking-widest">
+            Gestión de convivencia escolar
+          </span>
+
+          <h3 class="font-display font-extrabold text-3xl mt-3 mb-5">
+            Convivenc-IA
+          </h3>
+
+          <p class="text-slate-300 leading-relaxed mb-7">
+            Asistente diseñado para apoyar a equipos directivos, inspectoría y convivencia escolar mediante la consulta y organización de información normativa e institucional.
+          </p>
+
+          <ul class="space-y-4 text-sm text-slate-200 mb-9">
+            <li class="flex gap-3">
+              <i data-lucide="check-circle-2" class="check"></i>
+              Consulta de RICE, PEI, PISE y protocolos incorporados.
+            </li>
+            <li class="flex gap-3">
+              <i data-lucide="check-circle-2" class="check"></i>
+              Orientación sobre procedimientos institucionales documentados.
+            </li>
+            <li class="flex gap-3">
+              <i data-lucide="check-circle-2" class="check"></i>
+              Apoyo en la elaboración de documentos y comunicaciones.
+            </li>
+            <li class="flex gap-3">
+              <i data-lucide="check-circle-2" class="check"></i>
+              Adaptación a las fuentes autorizadas del establecimiento.
+            </li>
+          </ul>
+
+          <p class="text-xs text-slate-500 mb-6">
+            Las respuestas requieren revisión profesional, especialmente en situaciones sensibles.
+          </p>
+
+          <a href="#" data-quote="Convivenc-IA"
+             class="btn-whatsapp flex items-center justify-center gap-2 font-bold rounded-xl px-6 py-4">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            Cotizar Convivenc-IA
+          </a>
+        </article>
+
+        <!-- PEDAGOG-IA -->
+        <article class="glass card-hover rounded-3xl p-8 sm:p-10">
+          <div class="w-16 h-16 rounded-2xl bg-purple-400/15 flex justify-center items-center mb-7">
+            <i data-lucide="graduation-cap" class="w-9 h-9 text-purple-400"></i>
+          </div>
+
+          <span class="text-purple-400 text-xs font-bold uppercase tracking-widest">
+            Apoyo a la gestión pedagógica
+          </span>
+
+          <h3 class="font-display font-extrabold text-3xl mt-3 mb-5">
+            Pedagog-IA
+          </h3>
+
+          <p class="text-slate-300 leading-relaxed mb-7">
+            Asistente de apoyo para docentes y equipos UTP, enfocado en el trabajo pedagógico basado en el currículum nacional y los lineamientos del establecimiento.
+          </p>
+
+          <ul class="space-y-4 text-sm text-slate-200 mb-9">
+            <li class="flex gap-3">
+              <i data-lucide="check-circle-2" class="check"></i>
+              Consulta de objetivos y orientaciones curriculares.
+            </li>
+            <li class="flex gap-3">
+              <i data-lucide="check-circle-2" class="check"></i>
+              Propuestas de actividades y recursos educativos.
+            </li>
+            <li class="flex gap-3">
+              <i data-lucide="check-circle-2" class="check"></i>
+              Orientaciones para diversificar el aprendizaje.
+            </li>
+            <li class="flex gap-3">
+              <i data-lucide="check-circle-2" class="check"></i>
+              Apoyo contextualizado según niveles y necesidades pedagógicas.
+            </li>
+          </ul>
+
+          <p class="text-xs text-slate-500 mb-6">
+            Las propuestas deben ser validadas y ajustadas por el equipo docente.
+          </p>
+
+          <a href="#" data-quote="Pedagog-IA"
+             class="btn-whatsapp flex items-center justify-center gap-2 font-bold rounded-xl px-6 py-4">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            Cotizar Pedagog-IA
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- VIDEO ORIGINAL CONSERVADO -->
+    <section id="video" class="py-24 bg-[#0b1120]/80 border-y border-white/10">
+      <div class="max-w-5xl mx-auto px-5">
+
+        <div class="text-center max-w-3xl mx-auto mb-11">
+          <span class="section-tag">Conoce nuestras herramientas</span>
+
+          <h2 class="font-display font-extrabold text-3xl sm:text-5xl mt-4 mb-5">
+            Descubre cómo funciona nuestra propuesta.
+          </h2>
+
+          <p class="text-slate-400 text-lg leading-relaxed">
+            Conoce el enfoque de CorvInc Solutions y cómo la inteligencia artificial puede apoyar los desafíos cotidianos de la gestión escolar.
+          </p>
+        </div>
+
+        <div class="rounded-3xl overflow-hidden border border-cyan-400/30 shadow-2xl shadow-cyan-500/10 bg-black">
+
+          <!-- CONSERVA EL VIDEO demo.mp4 -->
+          <video
+            controls
+            playsinline
+            preload="metadata"
+            poster="82879.png"
+            class="w-full aspect-video bg-black"
+            aria-label="Video de presentación de CorvInc Solutions">
+
+            <source src="demo.mp4" type="video/mp4">
+
+            Tu navegador no admite video HTML5.
+          </video>
+
+        </div>
+
+        <div class="text-center mt-9">
+
+          <p class="text-slate-400 mb-6">
+            ¿Quieres ver cómo podría funcionar una solución adaptada a tu escuela?
+          </p>
+
+          <a href="#" data-quote="una demostración gratuita de Convivenc-IA y Pedagog-IA"
+             class="btn-primary inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 font-bold">
+            <i data-lucide="calendar-check" class="w-5 h-5"></i>
+            Solicitar demostración gratuita
           </a>
         </div>
+      </div>
+    </section>
 
-        <!-- Métricas de valor -->
-        <div class="grid grid-cols-3 gap-4 mt-12 pt-8 border-t border-white/10 text-left">
-          <div>
-            <p class="font-display font-extrabold text-2xl sm:text-3xl text-cyan-400">100%</p>
-            <p class="text-xs sm:text-sm text-slate-400">Adaptado a los documentos de tu colegio</p>
-          </div>
-          <div>
-            <p class="font-display font-extrabold text-2xl sm:text-3xl text-amber-400">0 Ruido</p>
-            <p class="text-xs sm:text-sm text-slate-400">Respuestas precisas sin inventar normas</p>
-          </div>
-          <div>
-            <p class="font-display font-extrabold text-2xl sm:text-3xl text-purple-400">24/7</p>
-            <p class="text-xs sm:text-sm text-slate-400">Apoyo inmediato para UTP, Convivencia y Docentes</p>
-          </div>
-        </div>
+    <!-- BENEFICIOS -->
+    <section id="beneficios" class="py-24 max-w-7xl mx-auto px-5 lg:px-8">
+
+      <div class="max-w-3xl mx-auto text-center mb-14">
+        <span class="section-tag">Valor para tu establecimiento</span>
+
+        <h2 class="font-display font-extrabold text-3xl sm:text-5xl mt-4 mb-5">
+          Tecnología que apoya el trabajo educativo.
+        </h2>
+
+        <p class="text-slate-400 text-lg">
+          Más que incorporar inteligencia artificial, buscamos facilitar tareas concretas y fortalecer el acceso a información relevante.
+        </p>
       </div>
 
-      <!-- Columna Visual / Tarjeta Tecnológica -->
-      <div class="lg:col-span-5">
-        <div class="relative mx-auto max-w-md">
-          <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-amber-400 rounded-3xl blur opacity-35"></div>
-          <div class="relative glass-card rounded-3xl p-7 sm:p-8 border border-white/15">
-            <div class="flex flex-col items-center text-center mb-6">
-              <img src="82879.png" alt="CorvInc Solutions" onerror="this.style.display='none'" class="w-36 h-36 rounded-2xl object-cover border-2 border-amber-400/50 shadow-2xl mb-4 animate-float">
-              <h2 class="font-display font-bold text-2xl text-white">CorvInc Solutions</h2>
-              <p class="text-sm text-cyan-400 font-medium">Innovación Tecnológica para la Educación</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="glass card-hover rounded-2xl p-7">
+          <i data-lucide="timer" class="w-9 h-9 text-cyan-400 mb-5"></i>
+          <h3 class="font-bold text-lg mb-3">Optimización del tiempo</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Facilita búsquedas y tareas de preparación documental.
+          </p>
+        </div>
+
+        <div class="glass card-hover rounded-2xl p-7">
+          <i data-lucide="folder-search" class="w-9 h-9 text-purple-400 mb-5"></i>
+          <h3 class="font-bold text-lg mb-3">Información accesible</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Permite consultar información institucional incorporada al sistema.
+          </p>
+        </div>
+
+        <div class="glass card-hover rounded-2xl p-7">
+          <i data-lucide="settings-2" class="w-9 h-9 text-amber-400 mb-5"></i>
+          <h3 class="font-bold text-lg mb-3">Personalización</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Configuración según los objetivos y documentación de cada institución.
+          </p>
+        </div>
+
+        <div class="glass card-hover rounded-2xl p-7">
+          <i data-lucide="book-open" class="w-9 h-9 text-cyan-400 mb-5"></i>
+          <h3 class="font-bold text-lg mb-3">Enfoque educativo chileno</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Orientación a necesidades pedagógicas y de convivencia escolar.
+          </p>
+        </div>
+
+        <div class="glass card-hover rounded-2xl p-7">
+          <i data-lucide="user-check" class="w-9 h-9 text-purple-400 mb-5"></i>
+          <h3 class="font-bold text-lg mb-3">Criterio profesional</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Herramientas de apoyo que no sustituyen las decisiones de los profesionales.
+          </p>
+        </div>
+
+        <div class="glass card-hover rounded-2xl p-7">
+          <i data-lucide="handshake" class="w-9 h-9 text-amber-400 mb-5"></i>
+          <h3 class="font-bold text-lg mb-3">Implementación acompañada</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Opciones de capacitación, actualización y soporte técnico.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section id="implementacion" class="py-24 bg-[#0b1120]/75 border-y border-white/10">
+      <div class="max-w-6xl mx-auto px-5">
+
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <span class="section-tag">Proceso de implementación</span>
+
+          <h2 class="font-display font-extrabold text-3xl sm:text-5xl mt-4 mb-5">
+            De tu necesidad a una solución personalizada.
+          </h2>
+
+          <p class="text-slate-400">
+            Una implementación organizada en etapas, con definición de alcance y acompañamiento.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-6">
+
+          <div class="glass rounded-2xl p-7">
+            <span class="font-display text-4xl font-extrabold text-cyan-400">01</span>
+            <h3 class="font-bold text-lg mt-5 mb-3">Diagnóstico</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Identificamos necesidades del establecimiento y posibles casos de uso.
+            </p>
+          </div>
+
+          <div class="glass rounded-2xl p-7">
+            <span class="font-display text-4xl font-extrabold text-cyan-400">02</span>
+            <h3 class="font-bold text-lg mt-5 mb-3">Configuración</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Se seleccionan fuentes autorizadas y se define el funcionamiento del asistente.
+            </p>
+          </div>
+
+          <div class="glass rounded-2xl p-7">
+            <span class="font-display text-4xl font-extrabold text-purple-400">03</span>
+            <h3 class="font-bold text-lg mt-5 mb-3">Validación</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Se revisan casos de prueba y se ajusta el comportamiento según el alcance contratado.
+            </p>
+          </div>
+
+          <div class="glass rounded-2xl p-7">
+            <span class="font-display text-4xl font-extrabold text-amber-400">04</span>
+            <h3 class="font-bold text-lg mt-5 mb-3">Puesta en marcha</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Orientación de uso y opciones de capacitación y mantenimiento.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANES -->
+    <section id="planes" class="py-24 max-w-7xl mx-auto px-5 lg:px-8">
+
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="section-tag">Modalidades de servicio</span>
+
+        <h2 class="font-display font-extrabold text-3xl sm:text-5xl mt-4 mb-5">
+          Una solución para cada necesidad.
+        </h2>
+
+        <p class="text-slate-400 text-lg leading-relaxed">
+          Elige la alternativa que mejor se adapte a tu establecimiento. Preparamos una cotización de acuerdo con el alcance, configuración y servicios requeridos.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-8 items-stretch">
+
+        <!-- PLAN 1 -->
+        <article class="glass card-hover rounded-3xl p-8 flex flex-col">
+
+          <div class="mb-6">
+            <span class="px-3 py-1.5 text-xs font-bold text-cyan-300 border border-cyan-400/30 bg-cyan-400/10 rounded-full">
+              Gestión escolar
+            </span>
+          </div>
+
+          <i data-lucide="shield-check" class="w-10 h-10 text-cyan-400 mb-6"></i>
+
+          <h3 class="font-display text-2xl font-extrabold mb-3">
+            Convivenc-IA
+          </h3>
+
+          <p class="text-sm text-slate-400 leading-relaxed mb-8">
+            Solución especializada para apoyar la consulta de documentación normativa y de convivencia escolar.
+          </p>
+
+          <ul class="space-y-4 text-sm text-slate-200 mb-9 flex-1">
+            <li class="flex gap-3">
+              <i data-lucide="check" class="check"></i>
+              Configuración institucional.
+            </li>
+            <li class="flex gap-3">
+              <i data-lucide="check" class="check"></i>
+              Integración de fuentes autorizadas.
+            </li>
+            <li class="flex gap-3">
+              <i data-lucide="check" class="check"></i>
+              Pruebas de funcionamiento.
+            </li>
+            <li class="flex gap-3">
+              <i data-lucide="check" class="check"></i>
+              Opciones de capacitación.
+            </li>
+          </ul>
+
+          <a href="#" data-quote="la implementación de Convivenc-IA"
+             class="btn-whatsapp rounded-xl px-6 py-4 font-bold flex items-center justify-center gap-2">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            Cotizar
+          </a>
+        </article>
+
+        <!-- PLAN DESTACADO -->
+        <article class="featured card-hover rounded-3xl p-8 flex flex-col relative">
+
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 whitespace-nowrap">
+            <span class="bg-gradient-to-r from-amber-400 to-yellow-500 text-[#111827] text-xs font-extrabold px-5 py-2 rounded-full shadow-lg">
+              SOLUCIÓN INTEGRAL
+            </span>
+          </div>
+
+          <div class="mt-3 mb-6">
+            <span class="px-3 py-1.5 text-xs font-bold text-amber-300 border border-amber-400/30 bg-amber-400/10 rounded-full">
+              Convivencia + Pedagogía
+            </span>
+          </div>
+
+          <i data-lucide="layers-3" class="w-10 h-10 text-amber-400 mb-6"></i>
+
+          <h3 class="font-display text-2xl font-extrabold mb-3">
+            Pack Integral
+          </h3>
+
+          <p class="text-sm text-slate-300 leading-relaxed mb-8">
+            Convivenc-IA y Pedagog-IA en una propuesta conjunta para apoyar tanto la gestión normativa como la pedagógica.
+          </p>
+
+          <ul class="space-y-4 text-sm text-slate-200 mb-9 flex-1">
+            <li class="flex gap-3">
+              <i data-lucide="check" class="check text-amber-400"></i>
+              Implementación de Convivenc-IA.
+            </li>
+            <li class="flex gap-3">
+              <i data-lucide="check" class="check text-amber-400"></i>
+              Implementación de Pedagog-IA.
+            </li>
+            <li class="flex gap-3">
+              <i data-lucide="check" class="check text-amber-400"></i>
+              Configuración de fuentes por área.
+            </li>
+            <li class="flex gap-3">
+              <i data-lucide="check" class="check text-amber-400"></i>
+              Capacitación disponible según propuesta.
+            </li>
+          </ul>
+
+          <a href="#" data-quote="el Pack Integral Convivenc-IA y Pedagog-IA"
+             class="btn-whatsapp rounded-xl px-6 py-4 font-extrabold flex items-center justify-center gap-2">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            Cotizar Pack Integral
+          </a>
+        </article>
+
+        <!-- PLAN 3 -->
+        <article class="glass card-hover rounded-3xl p-8 flex flex-col">
+
+          <div class="mb-6">
+            <span class="px-3 py-1.5 text-xs font-bold text-purple-300 border border-purple-400/30 bg-purple-400/10 rounded-full">
+              Continuidad operativa
+            </span>
+          </div>
+
+          <i data-lucide="refresh-cw" class="w-10 h-10 text-purple-400 mb-6"></i>
+
+          <h3 class="font-display text-2xl font-extrabold mb-3">
+            Mantenimiento y actualización
+          </h3>
+
+          <p class="text-sm text-slate-400 leading-relaxed mb-8">
+            Servicio para incorporar cambios documentales y realizar ajustes al asistente dentro del alcance acordado.
+          </p>
+
+          <ul class="space-y-4 text-sm text-slate-200 mb-9 flex-1">
+            <li class="flex gap-3">
+              <i data-lucide="check" class="check"></i>
+              Incorporación de documentos actualizados.
+            </li>
+            <li class="flex gap-3">
+              <i data-lucide="check" class="check"></i>
+              Revisión de fuentes y versiones.
+            </li>
+            <li class="flex gap-3">
+              <i data-lucide="check" class="check"></i>
+              Ajustes de configuración acordados.
+            </li>
+            <li class="flex gap-3">
+              <i data-lucide="check" class="check"></i>
+              Soporte según condiciones contratadas.
+            </li>
+          </ul>
+
+          <a href="#" data-quote="el servicio de mantenimiento y actualización"
+             class="btn-whatsapp rounded-xl px-6 py-4 font-bold flex items-center justify-center gap-2">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            Cotizar mantenimiento
+          </a>
+        </article>
+
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="text-slate-400 mb-5">
+          También ofrecemos capacitación práctica para equipos educativos.
+        </p>
+
+        <a href="#" data-quote="una capacitación para nuestro equipo educativo"
+           class="btn-outline inline-flex items-center gap-2 px-7 py-4 rounded-xl font-bold">
+          <i data-lucide="users" class="w-5 h-5 text-cyan-400"></i>
+          Cotizar capacitación
+        </a>
+      </div>
+    </section>
+
+    <!-- PRUEBA PILOTO -->
+    <section id="piloto" class="py-20 bg-[#0b1120]/80 border-y border-white/10">
+
+      <div class="max-w-6xl mx-auto px-5">
+
+        <div class="rounded-3xl p-8 sm:p-12 lg:p-14 border border-cyan-400/30 bg-gradient-to-br from-cyan-950/45 via-[#111b35] to-purple-950/40">
+
+          <div class="grid lg:grid-cols-5 gap-10 items-center">
+
+            <div class="lg:col-span-3">
+              <span class="text-amber-300 text-xs font-extrabold uppercase tracking-widest">
+                Programa de evaluación inicial
+              </span>
+
+              <h2 class="font-display text-3xl sm:text-4xl font-extrabold mt-4 mb-5">
+                Conoce el potencial de la IA antes de implementarla.
+              </h2>
+
+              <p class="text-slate-300 leading-relaxed mb-5">
+                Consulta por la posibilidad de desarrollar una prueba piloto de alcance limitado para conocer el funcionamiento del asistente en tu contexto escolar.
+              </p>
+
+              <p class="text-sm text-slate-400 leading-relaxed">
+                La disponibilidad, duración y condiciones de los pilotos se acuerdan previamente. Su evaluación puede considerar utilidad, facilidad de uso y oportunidades de mejora.
+              </p>
             </div>
 
-            <div class="space-y-3 text-sm">
-              <div class="p-3.5 rounded-xl bg-white/5 border border-white/10 flex items-start gap-3">
-                <div class="p-2 rounded-lg bg-cyan-500/20 text-cyan-400 shrink-0">
-                  <i data-lucide="shield-check" class="w-5 h-5"></i>
-                </div>
-                <div>
-                  <p class="font-bold text-white">Convivenc-IA</p>
-                  <p class="text-slate-400 text-xs">Consulta instantánea de RICE, PEI, PISE y protocolos escolares sin errores ni improvisación.</p>
-                </div>
-              </div>
+            <div class="lg:col-span-2 text-center">
+              <div class="p-7 bg-black/20 border border-white/10 rounded-2xl">
 
-              <div class="p-3.5 rounded-xl bg-white/5 border border-white/10 flex items-start gap-3">
-                <div class="p-2 rounded-lg bg-purple-500/20 text-purple-400 shrink-0">
-                  <i data-lucide="book-open-check" class="w-5 h-5"></i>
-                </div>
-                <div>
-                  <p class="font-bold text-white">Pedagog-IA</p>
-                  <p class="text-slate-400 text-xs">Planificación, rúbricas y apoyo docente alineado con el currículum y sello de tu escuela.</p>
-                </div>
+                <i data-lucide="flask-conical" class="w-12 h-12 text-cyan-400 mx-auto mb-5"></i>
+
+                <h3 class="font-bold text-xl mb-3">
+                  Solicita una prueba piloto
+                </h3>
+
+                <p class="text-sm text-slate-400 mb-7">
+                  Cuéntanos qué necesita tu establecimiento.
+                </p>
+
+                <a href="#" data-quote="evaluar una prueba piloto para nuestro establecimiento"
+                   class="btn-whatsapp flex justify-center items-center gap-2 px-5 py-4 rounded-xl font-bold">
+                  <i data-lucide="message-circle" class="w-5 h-5"></i>
+                  Consultar disponibilidad
+                </a>
+
               </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section id="nosotros" class="py-24 max-w-6xl mx-auto px-5">
+
+      <div class="max-w-3xl mx-auto text-center mb-14">
+
+        <span class="section-tag">Quiénes somos</span>
+
+        <h2 class="font-display text-3xl sm:text-5xl font-extrabold mt-4 mb-6">
+          Tecnología creada desde la realidad escolar.
+        </h2>
+
+        <p class="text-slate-300 leading-relaxed text-lg">
+          CorvInc Solutions desarrolla soluciones tecnológicas orientadas a las necesidades concretas de los establecimientos educacionales, combinando herramientas digitales, automatización e inteligencia artificial aplicada.
+        </p>
+
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <div class="glass rounded-2xl p-9">
+          <i data-lucide="target" class="w-10 h-10 text-cyan-400 mb-6"></i>
+
+          <h3 class="font-display text-2xl font-bold mb-4">
+            Nuestra misión
+          </h3>
+
+          <p class="text-slate-400 leading-relaxed">
+            Facilitar la gestión educativa mediante soluciones digitales personalizadas que apoyen la organización, el acceso a información y el trabajo de los equipos escolares.
+          </p>
+        </div>
+
+        <div class="glass rounded-2xl p-9">
+          <i data-lucide="eye" class="w-10 h-10 text-amber-400 mb-6"></i>
+
+          <h3 class="font-display text-2xl font-bold mb-4">
+            Nuestra visión
+          </h3>
+
+          <p class="text-slate-400 leading-relaxed">
+            Contribuir a una adopción accesible, práctica y responsable de nuevas tecnologías en escuelas y liceos de Chile.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- USO RESPONSABLE -->
+    <section class="py-20 bg-[#0b1120]/75 border-y border-white/10">
+      <div class="max-w-5xl mx-auto px-5">
+
+        <div class="glass rounded-3xl p-8 sm:p-12">
+
+          <div class="flex flex-col sm:flex-row gap-6">
+
+            <div class="shrink-0">
+              <div class="w-16 h-16 bg-cyan-400/10 rounded-2xl flex items-center justify-center">
+                <i data-lucide="shield-alert" class="w-9 h-9 text-cyan-400"></i>
+              </div>
+            </div>
+
+            <div>
+              <span class="section-tag">Compromiso con el uso responsable</span>
+
+              <h2 class="font-display text-2xl sm:text-3xl font-bold mt-3 mb-5">
+                Inteligencia artificial como apoyo, no como reemplazo del criterio profesional.
+              </h2>
+
+              <p class="text-slate-300 leading-relaxed mb-5">
+                Nuestros asistentes buscan facilitar consultas y tareas educativas utilizando las fuentes configuradas para cada implementación. Como cualquier sistema de inteligencia artificial, pueden producir respuestas incompletas o incorrectas.
+              </p>
+
+              <p class="text-slate-400 leading-relaxed">
+                La información debe ser revisada por profesionales responsables. Antes de incorporar datos personales o sensibles, es necesario establecer autorizaciones, medidas de seguridad y condiciones de tratamiento adecuadas.
+              </p>
+
             </div>
           </div>
         </div>
+
+      </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section id="preguntas" class="py-24 max-w-4xl mx-auto px-5">
+
+      <div class="text-center mb-12">
+
+        <span class="section-tag">Preguntas frecuentes</span>
+
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl mt-4">
+          Resolvemos tus dudas.
+        </h2>
+
       </div>
 
-    </div>
-  </section>
+      <div class="space-y-4">
 
-  <!-- QUÉ OFRECEMOS: EXPLICACIÓN DE CONVIVENC-IA Y PEDAGOG-IA + VIDEO -->
-  <section id="que-ofrecemos" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-t border-white/10">
-    <div class="text-center max-w-3xl mx-auto mb-12">
-      <span class="text-xs font-bold uppercase tracking-[0.2em] text-cyan-400">Qué ofrecemos</span>
-      <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white mt-2 mb-4">
-        Qué son Convivenc-IA y Pedagog-IA y cómo ayudan a tu colegio
-      </h2>
-      <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-        Implementamos asistentes de Inteligencia Artificial entrenados exclusivamente con la documentación oficial de tu establecimiento para entregar <strong class="text-white">ahorro de tiempo y orden</strong> en la gestión diaria.
-      </p>
-    </div>
+        <details class="glass rounded-2xl p-6">
+          <summary class="font-bold flex items-center justify-between gap-3">
+            ¿Es una solución igual a ChatGPT?
+            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-cyan-400 shrink-0"></i>
+          </summary>
+          <p class="text-slate-400 text-sm leading-relaxed mt-5">
+            CorvInc Solutions propone asistentes configurados para tareas y fuentes de un establecimiento. Su valor está en la especialización, configuración y acompañamiento acordados. Las capacidades concretas dependen de la solución implementada.
+          </p>
+        </details>
 
-    <!-- Explicación clara de ambas soluciones -->
-    <div class="grid md:grid-cols-2 gap-6 mb-10">
-      <div class="glass-card rounded-2xl p-6 border border-cyan-400/25">
-        <div class="flex items-center gap-3 mb-3">
-          <div class="p-2.5 rounded-xl bg-cyan-500/20 text-cyan-400">
-            <i data-lucide="shield-check" class="w-6 h-6"></i>
-          </div>
-          <h3 class="font-display font-bold text-xl text-white">¿Qué es Convivenc-IA?</h3>
-        </div>
-        <p class="text-slate-300 text-sm leading-relaxed">
-          Es un asistente enfocado en la <strong class="text-cyan-300">normativa y convivencia escolar</strong>. Permite a directivos, inspectores y equipos de convivencia consultar al instante protocolos, reglamentos (RICE, PEI, PISE) y pasos de actuación respaldados en los documentos del propio establecimiento.
-        </p>
+        <details class="glass rounded-2xl p-6">
+          <summary class="font-bold flex items-center justify-between gap-3">
+            ¿Se puede adaptar a los documentos de nuestra escuela?
+            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-cyan-400 shrink-0"></i>
+          </summary>
+          <p class="text-slate-400 text-sm leading-relaxed mt-5">
+            Sí, la propuesta contempla personalización según las fuentes que el establecimiento autorice y que sean compatibles con el alcance técnico contratado.
+          </p>
+        </details>
+
+        <details class="glass rounded-2xl p-6">
+          <summary class="font-bold flex items-center justify-between gap-3">
+            ¿La inteligencia artificial garantiza respuestas correctas?
+            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-cyan-400 shrink-0"></i>
+          </summary>
+          <p class="text-slate-400 text-sm leading-relaxed mt-5">
+            No. La inteligencia artificial puede equivocarse. Por eso recomendamos validar las respuestas, revisar las fuentes y mantener siempre supervisión profesional.
+          </p>
+        </details>
+
+        <details class="glass rounded-2xl p-6">
+          <summary class="font-bold flex items-center justify-between gap-3">
+            ¿Ofrecen capacitación?
+            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-cyan-400 shrink-0"></i>
+          </summary>
+          <p class="text-slate-400 text-sm leading-relaxed mt-5">
+            Sí, contamos con opciones de capacitación que pueden incluirse en la propuesta de implementación o cotizarse por separado.
+          </p>
+        </details>
+
+        <details class="glass rounded-2xl p-6">
+          <summary class="font-bold flex items-center justify-between gap-3">
+            ¿Cuál es el valor de implementación?
+            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-cyan-400 shrink-0"></i>
+          </summary>
+          <p class="text-slate-400 text-sm leading-relaxed mt-5">
+            Depende de la solución, cantidad de usuarios, configuración, soporte, capacitación y condiciones de uso. Puedes solicitar una cotización para tu establecimiento.
+          </p>
+        </details>
+
+        <details class="glass rounded-2xl p-6">
+          <summary class="font-bold flex items-center justify-between gap-3">
+            ¿Podemos solicitar una demostración?
+            <i data-lucide="chevron-down" class="faq-chevron w-5 h-5 text-cyan-400 shrink-0"></i>
+          </summary>
+          <p class="text-slate-400 text-sm leading-relaxed mt-5">
+            Sí. Puedes solicitar una demostración inicial para conocer las características de nuestras soluciones y resolver tus dudas.
+          </p>
+        </details>
+
       </div>
+    </section>
 
-      <div class="glass-card rounded-2xl p-6 border border-purple-400/25">
-        <div class="flex items-center gap-3 mb-3">
-          <div class="p-2.5 rounded-xl bg-purple-500/20 text-purple-400">
-            <i data-lucide="book-open-check" class="w-6 h-6"></i>
-          </div>
-          <h3 class="font-display font-bold text-xl text-white">¿Qué es Pedagog-IA?</h3>
-        </div>
-        <p class="text-slate-300 text-sm leading-relaxed">
-          Es un asistente diseñado para <strong class="text-purple-300">UTP y docentes</strong>. Apoya la planificación de clases, creación de rúbricas, evaluaciones y adecuaciones alineadas con los lineamientos internos, planes y sello educativo de la escuela.
-        </p>
-      </div>
-    </div>
+    <!-- COTIZACIÓN -->
+    <section id="cotizar" class="py-20 px-5">
 
-    <!-- Video explicativo -->
-    <div class="max-w-4xl mx-auto">
-      <div class="relative rounded-3xl overflow-hidden border border-cyan-400/30 bg-[#0b1020] shadow-2xl shadow-cyan-500/10">
-        <video controls preload="metadata" poster="82879.png" class="w-full aspect-video bg-black">
-          <source src="demo.mp4" type="video/mp4" />
-          Tu navegador no soporta la reproducción de video HTML5.
-        </video>
-      </div>
-      <div class="text-center mt-8">
-        <a href="#servicios" class="inline-flex items-center gap-2 text-sm font-bold text-cyan-400 hover:text-cyan-300 transition">
-          <span>Ver modalidades y packs disponibles</span>
-          <i data-lucide="chevron-down" class="w-4 h-4"></i>
-        </a>
-      </div>
-    </div>
-  </section>
+      <div class="max-w-5xl mx-auto rounded-3xl overflow-hidden relative border border-cyan-400/30 bg-gradient-to-br from-cyan-950/65 via-[#13203c] to-purple-950/60 p-8 sm:p-12 lg:p-16 text-center">
 
-  <!-- QUIÉNES SOMOS + MISIÓN Y VISIÓN -->
-  <section id="nosotros" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/10">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="text-xs font-bold uppercase tracking-[0.2em] text-cyan-400">Identidad Institucional</span>
-      <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white mt-2 mb-4">
-        Tecnología creada desde la realidad escolar
-      </h2>
-      <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-        En <strong class="text-white">CorvInc Solutions</strong> somos especialistas en informática educativa e implementación de Inteligencia Artificial aplicada. Nacimos dentro del ecosistema escolar, comprendiendo de primera mano la sobrecarga administrativa de directivos, equipos de convivencia, UTP y docentes. No vendemos teoría compleja: diseñamos herramientas listas para usar que devuelven horas valiosas a las personas.
-      </p>
-    </div>
+        <div class="relative z-10">
 
-    <div id="mision-vision" class="grid md:grid-cols-2 gap-8">
-      <!-- Misión -->
-      <div class="glass-card rounded-2xl p-8 relative overflow-hidden">
-        <div class="w-12 h-12 rounded-xl bg-cyan-500/15 border border-cyan-400/30 flex items-center justify-center text-cyan-400 mb-5">
-          <i data-lucide="target" class="w-6 h-6"></i>
-        </div>
-        <h3 class="font-display font-bold text-2xl text-white mb-3">Nuestra Misión</h3>
-        <p class="text-slate-300 leading-relaxed">
-          Optimizar la gestión normativa y pedagógica de los establecimientos educacionales mediante soluciones de Inteligencia Artificial personalizadas, simples y seguras, generando <strong class="text-cyan-300">ahorro real de tiempo y orden operativo</strong> para toda la comunidad educativa.
-        </p>
-      </div>
+          <span class="text-amber-300 font-bold text-xs uppercase tracking-[.2em]">
+            El siguiente paso para tu establecimiento
+          </span>
 
-      <!-- Visión -->
-      <div class="glass-card rounded-2xl p-8 relative overflow-hidden">
-        <div class="w-12 h-12 rounded-xl bg-amber-500/15 border border-amber-400/30 flex items-center justify-center text-amber-400 mb-5">
-          <i data-lucide="eye" class="w-6 h-6"></i>
-        </div>
-        <h3 class="font-display font-bold text-2xl text-white mb-3">Nuestra Visión</h3>
-        <p class="text-slate-300 leading-relaxed">
-          Ser el aliado tecnológico de referencia para escuelas y liceos en Chile en la adopción práctica y responsable de la Inteligencia Artificial, democratizando herramientas de alto impacto que fortalezcan la convivencia escolar y la calidad pedagógica.
-        </p>
-      </div>
-    </div>
-  </section>
+          <h2 class="font-display font-extrabold text-3xl sm:text-5xl leading-tight mt-5 mb-6">
+            ¿Tu colegio está listo para dar el siguiente paso?
+          </h2>
 
-  <!-- SERVICIOS / PACKS (SIN PRECIOS, CON BOTÓN DIRECTO A WHATSAPP) -->
-  <section id="servicios" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/10">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="text-xs font-bold uppercase tracking-[0.2em] text-amber-400">Modalidades de Implementación</span>
-      <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white mt-2 mb-4">
-        Orden, rapidez y respaldo documental en un clic
-      </h2>
-      <p class="text-slate-300 text-base sm:text-lg">
-        Elige la modalidad que mejor se adapta a las necesidades de tu establecimiento. Cada implementación se construye exclusivamente con tus documentos oficiales.
-      </p>
-    </div>
-
-    <div class="grid lg:grid-cols-3 gap-8 items-stretch">
-
-      <!-- SERVICIO 1: PACK CONVIVENC-IA -->
-      <div class="glass-card rounded-3xl p-8 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-6">
-            <span class="px-3 py-1 rounded-full text-xs font-bold bg-cyan-500/15 text-cyan-300 border border-cyan-400/30">
-              Gestión Normativa
-            </span>
-            <i data-lucide="scale" class="w-7 h-7 text-cyan-400"></i>
-          </div>
-
-          <h3 class="font-display font-extrabold text-2xl text-white mb-2">
-            Pack Convivenc-IA + Capacitación
-          </h3>
-          <p class="text-slate-400 text-sm mb-6">
-            Asistente inteligente dedicado a la normativa interna y protocolos de tu establecimiento para actuar con rapidez y respaldo.
+          <p class="text-slate-300 text-lg max-w-2xl mx-auto mb-9 leading-relaxed">
+            Cuéntanos qué necesita tu equipo. Te ayudaremos a identificar una alternativa de implementación y preparar una propuesta para tu institución.
           </p>
 
-          <ul class="space-y-3.5 text-sm text-slate-200 mb-8">
-            <li class="flex items-start gap-2.5">
-              <i data-lucide="check-circle-2" class="w-5 h-5 text-cyan-400 shrink-0 mt-0.5"></i>
-              <span><strong>Configuración dedicada:</strong> Entrenado con tu RICE, PEI, PISE, protocolos de actuación y normativa vigente.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <i data-lucide="check-circle-2" class="w-5 h-5 text-cyan-400 shrink-0 mt-0.5"></i>
-              <span><strong>Cero improvisación:</strong> Responde estrictamente según los documentos oficiales del colegio, sin inventar reglas.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <i data-lucide="check-circle-2" class="w-5 h-5 text-cyan-400 shrink-0 mt-0.5"></i>
-              <span><strong>Capacitación práctica incluida:</strong> Entrenamiento directo al equipo directivo y de Convivencia Escolar para su uso diario.</span>
-            </li>
-          </ul>
-        </div>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
 
-        <a href="https://wa.me/56978488772?text=Hola%20CorvInc%20Solutions,%20me%20interesa%20cotizar%20el%20*Pack%20Convivenc-IA%20+%20Capacitaci%C3%B3n*%20para%20nuestro%20establecimiento." target="_blank" rel="noopener" class="btn-ws w-full py-3.5 px-6 rounded-xl text-white font-bold text-center flex items-center justify-center gap-2">
-          <i data-lucide="message-circle" class="w-5 h-5"></i>
-          <span>Contactar</span>
-        </a>
-      </div>
+            <a href="#" data-quote="una cotización para implementar soluciones de CorvInc Solutions en nuestro establecimiento"
+               class="btn-whatsapp inline-flex items-center justify-center gap-3 text-white font-extrabold px-8 py-4 rounded-xl">
+              <i data-lucide="message-circle" class="w-6 h-6"></i>
+              Cotizar por WhatsApp
+            </a>
 
-      <!-- SERVICIO 2: PACK INTEGRAL (DESTACADO) -->
-      <div class="glass-card glass-card-featured rounded-3xl p-8 flex flex-col justify-between relative">
-        <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-950 text-xs font-extrabold uppercase tracking-wider px-4 py-1 rounded-full shadow-lg">
-          Solución Más Completa
-        </div>
+            <a href="mailto:cscorvinc@gmail.com?subject=Cotizaci%C3%B3n%20CorvInc%20Solutions"
+               class="btn-outline inline-flex items-center justify-center gap-3 text-white font-bold px-8 py-4 rounded-xl">
+              <i data-lucide="mail" class="w-5 h-5"></i>
+              Cotizar por correo
+            </a>
 
-        <div>
-          <div class="flex items-center justify-between mb-6 mt-2">
-            <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-400/40">
-              Convivencia + UTP
-            </span>
-            <i data-lucide="cpu" class="w-7 h-7 text-amber-400"></i>
           </div>
 
-          <h3 class="font-display font-extrabold text-2xl text-white mb-2">
-            Pack Integral: Convivenc-IA + Pedagog-IA
-          </h3>
-          <p class="text-slate-300 text-sm mb-6">
-            La transformación digital completa para tu colegio: orden normativo y potencia pedagógica en un solo sistema.
+          <p class="mt-7 text-sm text-slate-400">
+            Atención de consultas y propuestas para establecimientos educacionales.
           </p>
-
-          <ul class="space-y-3.5 text-sm text-slate-100 mb-8">
-            <li class="flex items-start gap-2.5">
-              <i data-lucide="check-circle-2" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
-              <span><strong>Todo el Pack Convivenc-IA:</strong> Asistente normativo dedicado a los reglamentos y protocolos de tu escuela.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <i data-lucide="check-circle-2" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
-              <span><strong>Implementación de Pedagog-IA:</strong> Asistente para docentes y UTP enfocado en planificación, evaluación, rúbricas y lineamientos institucionales.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <i data-lucide="check-circle-2" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
-              <span><strong>Doble capacitación aplicada:</strong> Jornadas prácticas para equipos de gestión, convivencia y cuerpo docente.</span>
-            </li>
-          </ul>
         </div>
 
-        <a href="https://wa.me/56978488772?text=Hola%20CorvInc%20Solutions,%20me%20interesa%20cotizar%20el%20*Pack%20Integral%20(Convivenc-IA%20+%20Pedagog-IA)*%20para%20nuestro%20colegio." target="_blank" rel="noopener" class="btn-ws w-full py-4 px-6 rounded-xl text-white font-extrabold text-center flex items-center justify-center gap-2">
-          <i data-lucide="message-circle" class="w-5 h-5"></i>
-          <span>Contactar</span>
-        </a>
       </div>
+    </section>
 
-      <!-- SERVICIO 3: ACTUALIZACIÓN MENSUAL DE FUENTES -->
-      <div class="glass-card rounded-3xl p-8 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between mb-6">
-            <span class="px-3 py-1 rounded-full text-xs font-bold bg-purple-500/20 text-purple-300 border border-purple-400/30">
-              Continuidad Operativa
-            </span>
-            <i data-lucide="database-zap" class="w-7 h-7 text-purple-400"></i>
-          </div>
-
-          <h3 class="font-display font-extrabold text-2xl text-white mb-2">
-            Actualización Mensual de Base de Datos
-          </h3>
-          <p class="text-slate-400 text-sm mb-6">
-            Mantén tus asistentes siempre al día ante cambios de protocolos, circulares, decretos o nuevos planes anuales.
-          </p>
-
-          <ul class="space-y-3.5 text-sm text-slate-200 mb-8">
-            <li class="flex items-start gap-2.5">
-              <i data-lucide="check-circle-2" class="w-5 h-5 text-purple-400 shrink-0 mt-0.5"></i>
-              <span><strong>Carga y depuración de fuentes:</strong> Incorporación ordenada de modificaciones al RICE, nuevos protocolos o documentos UTP.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <i data-lucide="check-circle-2" class="w-5 h-5 text-purple-400 shrink-0 mt-0.5"></i>
-              <span><strong>Precisión garantizada:</strong> Eliminación de versiones antiguas para evitar contradicciones en las respuestas.</span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <i data-lucide="check-circle-2" class="w-5 h-5 text-purple-400 shrink-0 mt-0.5"></i>
-              <span><strong>Soporte técnico continuo:</strong> Acompañamiento permanente para asegurar que el sistema siga operando fluido todo el año.</span>
-            </li>
-          </ul>
-        </div>
-
-        <a href="https://wa.me/56978488772?text=Hola%20CorvInc%20Solutions,%20quisiera%20informaci%C3%B3n%20sobre%20el%20servicio%20de%20*Actualizaci%C3%B3n%20Mensual%20de%20Base%20de%20Datos*%20para%20nuestro%20establecimiento." target="_blank" rel="noopener" class="btn-ws w-full py-3.5 px-6 rounded-xl text-white font-bold text-center flex items-center justify-center gap-2">
-          <i data-lucide="message-circle" class="w-5 h-5"></i>
-          <span>Contactar</span>
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- BANNER DE CIERRE / LLAMADO A LA ACCIÓN -->
-  <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
-    <div class="rounded-3xl p-8 sm:p-12 bg-gradient-to-r from-cyan-950/80 via-slate-900 to-purple-950/80 border border-cyan-400/30 text-center relative overflow-hidden">
-      <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white mb-4">
-        ¿Listo para ahorrar horas de gestión en tu colegio?
-      </h2>
-      <p class="text-slate-300 max-w-2xl mx-auto mb-8 text-base sm:text-lg">
-        Conversemos directamente por WhatsApp. Te mostramos en pocos minutos cómo Convivenc-IA y Pedagog-IA se adaptan a la realidad de tu establecimiento.
-      </p>
-      <a href="https://wa.me/56978488772?text=Hola%20CorvInc%20Solutions,%20quiero%20conversar%20sobre%20c%C3%B3mo%20implementar%20Convivenc-IA%20y%20Pedagog-IA%20en%20mi%20establecimiento." target="_blank" rel="noopener" class="btn-ws inline-flex items-center gap-3 text-white font-extrabold text-lg px-8 py-4 rounded-2xl">
-        <i data-lucide="message-circle" class="w-6 h-6"></i>
-        <span>Hablar por WhatsApp (+56 9 7848 8772)</span>
-      </a>
-    </div>
-  </section>
+  </main>
 
   <!-- FOOTER -->
-  <footer class="border-t border-white/10 py-10 px-4 sm:px-6 lg:px-8 bg-[#04060d]">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-400">
-      <div class="flex items-center gap-3">
-        <img src="82879.png" alt="CorvInc Solutions" onerror="this.style.display='none'" class="w-8 h-8 rounded-lg object-cover">
-        <span class="font-display font-bold text-white">CorvInc Solutions</span>
-        <span>— Innovación e IA para Establecimientos Educacionales</span>
+  <footer class="border-t border-white/10 bg-[#040710] py-12 px-5">
+
+    <div class="max-w-7xl mx-auto">
+
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+
+        <div class="flex items-center gap-4">
+
+          <img src="82879.png"
+               alt="Logo CorvInc Solutions"
+               class="w-12 h-12 rounded-xl object-cover"
+               onerror="this.style.display='none'">
+
+          <div>
+            <div class="font-display font-extrabold text-xl">
+              Corv<span class="gold-text">INC</span> Solutions
+            </div>
+            <p class="text-xs text-slate-400 mt-1">
+              Innovación tecnológica para establecimientos educacionales
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-5 text-sm text-slate-300">
+
+          <a href="https://wa.me/56978488772"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="hover:text-cyan-400 flex items-center gap-2">
+            <i data-lucide="phone" class="w-4 h-4 text-green-400"></i>
+            +56 9 7848 8772
+          </a>
+
+          <a href="mailto:cscorvinc@gmail.com"
+             class="hover:text-cyan-400 flex items-center gap-2">
+            <i data-lucide="mail" class="w-4 h-4 text-amber-400"></i>
+            cscorvinc@gmail.com
+          </a>
+
+        </div>
       </div>
-      <div class="flex items-center gap-6">
-        <a href="https://wa.me/56978488772" target="_blank" rel="noopener" class="hover:text-cyan-400 transition flex items-center gap-1.5">
-          <i data-lucide="phone" class="w-4 h-4 text-green-400"></i>
-          +56 9 7848 8772
-        </a>
-        <a href="mailto:cscorvinc@gmail.com" class="hover:text-cyan-400 transition flex items-center gap-1.5">
-          <i data-lucide="mail" class="w-4 h-4 text-amber-400"></i>
-          cscorvinc@gmail.com
-        </a>
+
+      <div class="border-t border-white/10 mt-9 pt-7 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
+
+        <p>
+          © <span id="year"></span> CorvInc Solutions. Todos los derechos reservados.
+        </p>
+
+        <p>
+          Tecnología con propósito educativo.
+        </p>
+
       </div>
     </div>
   </footer>
 
-  <!-- Inicializar iconos -->
+  <!-- BOTÓN FLOTANTE -->
+  <a href="#" data-quote="información y una cotización de sus soluciones de inteligencia artificial"
+     class="fixed bottom-5 right-5 z-40 btn-whatsapp rounded-full p-4 shadow-xl shadow-green-900/40"
+     aria-label="Cotizar por WhatsApp"
+     title="Cotizar por WhatsApp">
+    <i data-lucide="message-circle" class="w-7 h-7"></i>
+  </a>
+
+  <!-- FUNCIONALIDAD -->
   <script>
-    lucide.createIcons();
+    document.addEventListener('DOMContentLoaded', function () {
+
+      // Inicializar iconos
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+
+      // Año actualizado automáticamente
+      document.getElementById('year').textContent =
+        new Date().getFullYear();
+
+      // Menú móvil
+      const menuButton = document.getElementById('menuButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      menuButton.addEventListener('click', function () {
+        const isHidden = mobileMenu.classList.toggle('hidden');
+
+        menuButton.setAttribute(
+          'aria-expanded',
+          String(!isHidden)
+        );
+
+        menuButton.setAttribute(
+          'aria-label',
+          isHidden ? 'Abrir menú' : 'Cerrar menú'
+        );
+      });
+
+      mobileMenu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          mobileMenu.classList.add('hidden');
+          menuButton.setAttribute('aria-expanded', 'false');
+          menuButton.setAttribute('aria-label', 'Abrir menú');
+        });
+      });
+
+      // Cotizaciones personalizadas por WhatsApp
+      const whatsappNumber = '56978488772';
+
+      document.querySelectorAll('[data-quote]').forEach(function (link) {
+
+        const service = link.getAttribute('data-quote');
+
+        const message =
+          'Hola, CorvInc Solutions. Me gustaría solicitar información y cotizar ' +
+          service +
+          '. Somos un establecimiento educacional de Chile. ¿Podrían indicarnos las modalidades y condiciones de implementación?';
+
+        const url =
+          'https://wa.me/' +
+          whatsappNumber +
+          '?text=' +
+          encodeURIComponent(message);
+
+        link.setAttribute('href', url);
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+      });
+
+    });
   </script>
+
 </body>
 </html>
